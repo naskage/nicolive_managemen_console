@@ -242,7 +242,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  less-rails
   pg
   pry-byebug
   pry-doc

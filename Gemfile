@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'execjs'
 gem 'twitter-bootstrap-rails'
-gem 'less-rails'
+#gem 'less-rails'
 gem 'kaminari'
 
 gem 'devise'
