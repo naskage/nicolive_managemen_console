@@ -1,0 +1,83 @@
+<%= form_for @live_program, :html => { :class => "form-horizontal live_program" } do |f| %>
+
+  <% if @live_program.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@live_program.errors.count, "error") %> prohibited this live_program from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @live_program.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :live_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :live_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:live_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :started_at, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :started_at, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:started_at) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :user, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:user) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :desc, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:desc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :url, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:url) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :player_status, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :player_status, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:player_status) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dl_status, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dl_status, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dl_status) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                live_programs_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

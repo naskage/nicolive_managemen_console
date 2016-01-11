@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  host: <%= ENV['PG_HOST'] %>
+  database: tsarchives
+  username: postgres
+  password: <%= ENV['PG_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: managemen_console_test
+
+production:
+  <<: *default
+  host: <%= ENV['PG_HOST'] %>
+  database: tsarchives
+  username: postgres
+  password: <%= ENV['PG_PASSWORD'] %>
