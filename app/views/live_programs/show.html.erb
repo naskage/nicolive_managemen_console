@@ -20,6 +20,14 @@
   <dd><%= @live_program.player_status %></dd>
   <dt><strong><%= model_class.human_attribute_name(:dl_status) %>:</strong></dt>
   <dd><%= @live_program.dl_status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:flv) %>:</strong></dt>
+  <dd><%= @live_program.flv %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mp4) %>:</strong></dt>
+  <dd><%= @live_program.mp4 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:flv_url) %>:</strong></dt>
+  <dd><%= @live_program.flv_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mp4_url) %>:</strong></dt>
+  <dd><%= @live_program.mp4_url %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
