@@ -8,6 +8,11 @@ class LiveProgramsController < ApplicationController
     @live_programs = LiveProgram.order('started_at DESC').page(params[:page]).per(30)
   end
 
+  def search
+    @live_programs = LiveProgram.where('title like ?', "%#{search_params[:q]}%").order('started_at DESC').page(search_params[:page]).per(30)
+    render action: "index"
+  end
+
   # GET /live_programs/1
   # GET /live_programs/1.json
   def show
@@ -71,5 +76,9 @@ class LiveProgramsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def live_program_params
       params.require(:live_program).permit(:live_id, :started_at, :user, :title, :desc, :url, :player_status, :dl_status, :flv, :mp4)
+    end
+
+    def search_params
+      params.permit(:q, :page)
     end
 end

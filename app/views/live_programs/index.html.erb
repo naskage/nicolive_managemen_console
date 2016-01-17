@@ -8,6 +8,10 @@
 <div>
   <%= page_entries_info(@live_programs) %>
 </div>
+<%= form_tag({action: :search}, {method: :get, class: 'well form-search'}) do %>
+  <%= text_field_tag :q, "#{params[:q]}", class: 'input-medium search-query' %>
+  <%= submit_tag 'search', class: 'btn' %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
