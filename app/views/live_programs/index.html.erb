@@ -30,7 +30,7 @@
     <% @live_programs.each do |live_program| %>
       <tr>
         <!-- <td><%= link_to live_program.id, live_program_path(live_program) %></td> -->
-        <td><%= live_program.live_id %></td>
+        <td><%= link_to live_program.live_id, live_program_path(live_program) %></td>
         <td><%= live_program.started_at %></td>
         <!-- <td><%= live_program.user %></td> -->
         <td><%= live_program.title %></td>
