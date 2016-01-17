@@ -55,6 +55,10 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<div>
+  <%= paginate(@live_programs) %>
+</div>
+
+<!-- <%= link_to t('.new', :default => t("helpers.links.new")),
             new_live_program_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary' %> -->
