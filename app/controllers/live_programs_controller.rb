@@ -75,7 +75,7 @@ class LiveProgramsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def live_program_params
-      params.require(:live_program).permit(:live_id, :started_at, :user, :title, :desc, :url, :player_status, :dl_status, :flv, :mp4)
+      params.require(:live_program).permit(:live_id, :started_at, :user, :title, :desc, :url, :player_status, :dl_status, :flv, :mp4, :flv_url, :mp4_url)
     end
 
     def search_params
