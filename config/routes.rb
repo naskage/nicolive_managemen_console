@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :uploads
+  resources :jobs
   devise_for :users
   root 'pages#index'
   
