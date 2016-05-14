@@ -1,0 +1,12 @@
+class CreateJobs < ActiveRecord::Migration
+  def change
+    create_table :jobs do |t|
+      t.integer :live_id
+      t.boolean :divided
+      t.integer :division_num
+      t.integer :status
+
+      t.timestamps null: false
+    end
+  end
+end

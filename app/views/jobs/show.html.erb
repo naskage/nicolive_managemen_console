@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Live:</strong>
+  <%= @job.live_id %>
+</p>
+
+<p>
+  <strong>Divided:</strong>
+  <%= @job.divided %>
+</p>
+
+<p>
+  <strong>Division num:</strong>
+  <%= @job.division_num %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @job.status %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
