@@ -6,13 +6,13 @@ default: &default
 development:
   <<: *default
   host: <%= ENV['PG_HOST'] %>
-  database: tsarchives
+  database: tsarchives_development
   username: postgres
   password: <%= ENV['PG_PASSWORD'] %>
 
 test:
   <<: *default
-  database: managemen_console_test
+  database: tsarchives_test
 
 production:
   <<: *default

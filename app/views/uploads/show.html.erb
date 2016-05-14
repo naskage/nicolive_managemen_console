@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Upload -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Live:</strong>
-  <%= @upload.live_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:live_id) %>:</strong></dt>
+  <dd><%= @upload.live_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:src) %>:</strong></dt>
+  <dd><%= @upload.src %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dst) %>:</strong></dt>
+  <dd><%= @upload.dst %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @upload.status %></dd>
+</dl>
 
-<p>
-  <strong>Src:</strong>
-  <%= @upload.src %>
-</p>
-
-<p>
-  <strong>Dst:</strong>
-  <%= @upload.dst %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @upload.status %>
-</p>
-
-<%= link_to 'Edit', edit_upload_path(@upload) %> |
-<%= link_to 'Back', uploads_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              uploads_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_upload_path(@upload), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              upload_path(@upload),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
